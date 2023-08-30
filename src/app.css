@@ -1,0 +1,194 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+        /* border: red solid 1px; */
+}
+
+/* Navigation bar */
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 112px;
+    padding: 26px;
+    background-color: #FFF7ED;
+    gap: 13px;
+}
+
+nav > a {
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    text-align: right;
+    text-decoration: none;
+    color: #4D4D4D;
+    line-height: 22.923px; /* 143.267% */
+}
+
+.about-link:hover,
+.vans-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.title-link {
+    margin-right: auto;
+    font-family: Inter;
+    font-size: 25.353px;
+    font-style: normal;
+    font-weight: 900;
+    color: #000;
+    line-height: 40.271px; /* 158.842% */
+}
+
+.home,
+.about {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Home section */
+
+.home-section {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url('../assets/home-bg.png');
+    background-position-y: 30%;
+    background-size: cover;
+    max-width: 100%;
+    height: 387px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 27px;
+}
+
+.home-section h1 {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 42px; /* 116.667% */
+}
+
+.home-section h2 {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+}
+
+.find-vans-button {
+    text-decoration: none;
+    padding: 1em;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #FF8C38;    
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 15.946px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 31.662px;
+}
+
+/* About section */
+
+.about-main .about-link {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.about-section {
+    background: #FFF7ED;
+}
+
+.about-section .about-bg {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url('../assets/about-bg.png') no-repeat;
+    background-position-y: 45%;
+    background-size: cover;
+    min-height: 350px;
+    width: 100%;
+}
+
+.about-content {
+    padding: 27px 27px 54px 27px;
+}
+
+.about-content h1 {
+    color: #161616;
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 38px; /* 118.75% */
+    margin-bottom: 31px;
+}
+
+.about-content h2 {
+    color: #161616;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; /* 137.5% */
+}
+
+.about-content .rectangle {
+    padding: 32px;
+    border-radius: 5px;
+    background: #FFCC8D;
+    height: 200px;
+    margin-top: 54px;
+}
+
+.about-content .rectangle h3 {
+    color: #161616;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px; /* 125% */
+}
+
+.explore-vans-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px 13px 22px;
+    border-radius: 10px;
+    background: #161616;
+    font-family: Inter;
+    font-size: 15.946px;
+    font-style: normal;
+    font-weight: 700;
+    color: var(--white, #FFF);
+    line-height: 23.919px; /* 150% */
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    background: #252525;
+}
+
+footer p {
+    color: #AAA;
+    text-align: center;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22.923px; /* 163.733% */
+}
