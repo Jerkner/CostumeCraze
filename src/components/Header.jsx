@@ -60,7 +60,7 @@ export default function Header() {
                 {isLoggedIn ? (
                     <NavLink
                         onClick={() => logOut()}
-                        to="login"
+                        to="/"
                         className="nav-link log-in nowrap"
                     >
                         Log out
