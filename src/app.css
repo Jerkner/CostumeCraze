@@ -8,6 +8,7 @@
 
 html,
 body {
+    width: 100%;
     height: 100%;
     background-color: #fff7ed;
 }
@@ -20,7 +21,7 @@ div#root {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 100%;
     margin: 0 auto;
     background-color: #fff7ed;
@@ -401,6 +402,8 @@ footer {
 }
 
 .costume-list-container {
+    max-width: 1024px;
+    margin: 0 auto;
     padding: 1.5rem;
     background-color: #fff7ed;
 }
@@ -1520,8 +1523,10 @@ svg.star {
     .header {
         flex-direction: row;
         justify-content: space-between;
-        max-width: 100%;
-        padding: 2em;
+        max-width: 1024px;
+        width: max(896px, 100%);
+        margin: 0 auto;
+        padding-bottom: 2em;
     }
     .title-link {
         flex-direction: row;
