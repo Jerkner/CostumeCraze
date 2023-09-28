@@ -31,7 +31,7 @@ export default function Header() {
             >
                 <img
                     className="main-logo"
-                    src="public/assets/Specl145.png"
+                    src="/assets/Specl145.png"
                 />
                 #CostumeCraze
             </Link>

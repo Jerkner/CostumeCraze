@@ -122,8 +122,7 @@ footer {
     width: 100vw;
     height: 480px;
     padding-top: 66px;
-    background: url(public/assets/llanydd-lloyd-5kL77tAHTqQ-unsplash.jpg)
-        no-repeat;
+    background: url(/assets/llanydd-lloyd-5kL77tAHTqQ-unsplash.jpg) no-repeat;
     background-size: cover;
     gap: 50px;
 }
