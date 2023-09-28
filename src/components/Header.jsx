@@ -23,8 +23,6 @@ export default function Header() {
         setIsLoggedIn(false)
     }
 
-    console.log(isLoggedIn)
-
     return (
         <nav className="header">
             <Link
