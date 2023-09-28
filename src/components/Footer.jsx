@@ -1,9 +1,9 @@
-import React from "react";
+import React from "react"
 
 export default function Footer() {
     return (
         <footer>
-            <p>Ⓒ 2023 #VANLIFE</p>
+            <p>Ⓒ 2023 #CostumeCraze</p>
         </footer>
     )
 }
