@@ -52,6 +52,7 @@ export default function HostCostumeDetail() {
                 <img
                     className="host-costumes-details-img"
                     src={currentCostume.imageUrl}
+                    alt={`Photo of ${currentCostume.name}`}
                 />
                 <div className="host-costumes-details-info">
                     <h2 className="host-costumes-details-name">

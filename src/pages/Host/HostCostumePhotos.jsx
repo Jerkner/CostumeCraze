@@ -6,7 +6,10 @@ export default function HostCostumePhotos() {
 
     return (
         <section className="host-costume-photos">
-            <img src={currentCostume.imageUrl}></img>
+            <img
+                src={currentCostume.imageUrl}
+                alt={`Photo of ${currentCostume.name}`}
+            ></img>
         </section>
     )
 }

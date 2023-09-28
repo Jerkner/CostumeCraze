@@ -69,7 +69,10 @@ export default function Costumes() {
                     gender: genderFilter
                 }}
             >
-                <img src={costume.imageUrl} />
+                <img
+                    src={costume.imageUrl}
+                    alt={costume.name}
+                />
 
                 <div className="costume-info">
                     <h3>{costume.name}</h3>
