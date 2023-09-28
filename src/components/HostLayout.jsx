@@ -2,7 +2,6 @@ import React from "react"
 import { Outlet, NavLink } from "react-router-dom"
 
 export default function HostLayout() {
-    // const [currentCostume, setCurrentCostume] = useState(null)
     const activeStyles = {
         fontWeight: "bold",
         textUnderlineOffset: "0.25em",
