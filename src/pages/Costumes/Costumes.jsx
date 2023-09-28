@@ -53,7 +53,7 @@ export default function Costumes() {
                 costume.gender === genderFilter || costume.gender === "unisex"
             )
         }
-        return true // If no filters are applied, return all costumes
+        return true
     })
 
     const costumeElements = displayedCostumes.map((costume) => (
