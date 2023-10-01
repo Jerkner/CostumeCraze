@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react"
 import { Link, useSearchParams } from "react-router-dom"
 import { getCostumes } from "../../api"
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai"
+import { BsGenderMale, BsGenderFemale } from "react-icons/bs"
+import { IoMaleFemaleOutline } from "react-icons/io5"
 
 export default function Costumes() {
     const [searchParams, setSearchParams] = useSearchParams()
@@ -12,6 +14,7 @@ export default function Costumes() {
 
     const categoryFilter = searchParams.get("category")
     const genderFilter = searchParams.get("gender")
+    const sortDirection = searchParams.get("sortOrder")
 
     useEffect(() => {
         async function loadCostumes() {
@@ -24,6 +27,11 @@ export default function Costumes() {
             } finally {
                 setLoading(false)
             }
+        }
+
+        const sortOrderParam = searchParams.get("sortOrder")
+        if (sortOrderParam) {
+            setSortOrder(sortOrderParam)
         }
 
         loadCostumes()
@@ -40,6 +48,22 @@ export default function Costumes() {
             }
             return prevParams
         })
+    }
+
+    function handleSortAsc() {
+        setSearchParams((prevParams) => {
+            prevParams.set("sortOrder", "asc")
+            return prevParams
+        })
+        setSortOrder("asc")
+    }
+
+    function handleSortDesc() {
+        setSearchParams((prevParams) => {
+            prevParams.set("sortOrder", "desc")
+            return prevParams
+        })
+        setSortOrder("desc")
     }
 
     const displayedCostumes = [...costumes]
@@ -70,14 +94,6 @@ export default function Costumes() {
                 return priceB - priceA
             }
         })
-
-    function handleSortAsc() {
-        setSortOrder("asc")
-    }
-
-    function handleSortDesc() {
-        setSortOrder("desc")
-    }
 
     const costumeElements = displayedCostumes.map((costume) => (
         <div
@@ -132,7 +148,7 @@ export default function Costumes() {
                             onClick={() =>
                                 handleFilterChange("category", "superhero")
                             }
-                            className={`filter-button filter-button superhero 
+                            className={`filter-button superhero 
                     ${categoryFilter === "superhero" ? "selected" : ""}`}
                         >
                             Superheroes
@@ -141,7 +157,7 @@ export default function Costumes() {
                             onClick={() =>
                                 handleFilterChange("category", "historical")
                             }
-                            className={`filter-button filter-button historical 
+                            className={`filter-button historical 
                     ${categoryFilter === "historical" ? "selected" : ""}`}
                         >
                             Historical
@@ -150,7 +166,7 @@ export default function Costumes() {
                             onClick={() =>
                                 handleFilterChange("category", "fantasy")
                             }
-                            className={`filter-button filter-button fantasy 
+                            className={`filter-button fantasy 
                     ${categoryFilter === "fantasy" ? "selected" : ""}`}
                         >
                             Fantasy
@@ -159,7 +175,7 @@ export default function Costumes() {
                             onClick={() =>
                                 handleFilterChange("category", "creature")
                             }
-                            className={`filter-button filter-button creature 
+                            className={`filter-button creature 
                     ${categoryFilter === "creature" ? "selected" : ""}`}
                         >
                             Creatures
@@ -168,7 +184,7 @@ export default function Costumes() {
                             onClick={() =>
                                 handleFilterChange("category", "celebrity")
                             }
-                            className={`filter-button filter-button celebrity 
+                            className={`filter-button celebrity 
                     ${categoryFilter === "celebrity" ? "selected" : ""}`}
                         >
                             Celebrities
@@ -194,6 +210,7 @@ export default function Costumes() {
                     ${genderFilter === "male" ? "selected" : ""}`}
                         >
                             Male
+                            <BsGenderMale />
                         </button>
                         <button
                             onClick={() =>
@@ -203,6 +220,7 @@ export default function Costumes() {
                     ${genderFilter === "female" ? "selected" : ""}`}
                         >
                             Female
+                            <BsGenderFemale />
                         </button>
                         <button
                             onClick={() =>
@@ -212,6 +230,7 @@ export default function Costumes() {
                     ${genderFilter === "unisex" ? "selected" : ""}`}
                         >
                             Unisex
+                            <IoMaleFemaleOutline />
                         </button>
                         {genderFilter ? (
                             <button
@@ -225,34 +244,39 @@ export default function Costumes() {
                         ) : null}
                     </div>
                 </div>
-                {categoryFilter || genderFilter ? (
-                    <button
-                        onClick={() => {
-                            handleFilterChange("category", null)
-                            handleFilterChange("gender", null)
-                        }}
-                        className="clear-filters"
-                    >
-                        Clear filters
-                    </button>
-                ) : null}
+
                 <div className="filter">
                     <h3>Sort Price:</h3>
                     <div className="buttons-container">
                         <button
-                            className="filter-button sort"
+                            className={`filter-button sort ${
+                                sortDirection === "asc" ? "selected" : ""
+                            }`}
                             onClick={() => handleSortAsc()}
                         >
                             <AiOutlineArrowUp /> Ascending <AiOutlineArrowUp />
                         </button>
                         <button
-                            className="filter-button sort"
+                            className={`filter-button sort ${
+                                sortDirection === "desc" ? "selected" : ""
+                            }`}
                             onClick={() => handleSortDesc()}
                         >
                             <AiOutlineArrowDown />
                             Descending
                             <AiOutlineArrowDown />
                         </button>
+                        {categoryFilter || genderFilter ? (
+                            <button
+                                onClick={() => {
+                                    handleFilterChange("category", null)
+                                    handleFilterChange("gender", null)
+                                }}
+                                className="clear-filters"
+                            >
+                                Clear all filters
+                            </button>
+                        ) : null}
                     </div>
                 </div>
             </div>

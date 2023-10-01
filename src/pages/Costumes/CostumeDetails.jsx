@@ -78,12 +78,12 @@ export default function CostumeDetail() {
                         </p>
                         <div className="costume-selected">
                             <i
-                                className={`costume-category ${costume.category} selected`}
+                                className={`filter-button ${costume.category} selected`}
                             >
                                 {costume.category}
                             </i>
                             <i
-                                className={`costume-gender ${costume.gender} selected`}
+                                className={`filter-button ${costume.gender} selected`}
                             >
                                 {costume.gender}
                             </i>
