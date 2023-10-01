@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react"
 import { Link, useSearchParams } from "react-router-dom"
 import { getCostumes } from "../../api"
+import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai"
 
 export default function Costumes() {
     const [searchParams, setSearchParams] = useSearchParams()
+    const [sortOrder, setSortOrder] = useState("asc")
     const [costumes, setCostumes] = useState([])
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
@@ -40,21 +42,42 @@ export default function Costumes() {
         })
     }
 
-    const displayedCostumes = costumes.filter((costume) => {
-        if (categoryFilter && genderFilter) {
-            return (
-                costume.category === categoryFilter &&
-                (costume.gender === genderFilter || costume.gender === "unisex")
-            )
-        } else if (categoryFilter) {
-            return costume.category === categoryFilter
-        } else if (genderFilter) {
-            return (
-                costume.gender === genderFilter || costume.gender === "unisex"
-            )
-        }
-        return true
-    })
+    const displayedCostumes = [...costumes]
+        .filter((costume) => {
+            if (categoryFilter && genderFilter) {
+                return (
+                    costume.category === categoryFilter &&
+                    (costume.gender === genderFilter ||
+                        costume.gender === "unisex")
+                )
+            } else if (categoryFilter) {
+                return costume.category === categoryFilter
+            } else if (genderFilter) {
+                return (
+                    costume.gender === genderFilter ||
+                    costume.gender === "unisex"
+                )
+            }
+            return true
+        })
+        .sort((a, b) => {
+            const priceA = parseFloat(a.price)
+            const priceB = parseFloat(b.price)
+
+            if (sortOrder === "asc") {
+                return priceA - priceB
+            } else {
+                return priceB - priceA
+            }
+        })
+
+    function handleSortAsc() {
+        setSortOrder("asc")
+    }
+
+    function handleSortDesc() {
+        setSortOrder("desc")
+    }
 
     const costumeElements = displayedCostumes.map((costume) => (
         <div
@@ -71,7 +94,7 @@ export default function Costumes() {
             >
                 <img
                     src={costume.imageUrl}
-                    alt={costume.name}
+                    alt={`Photo of ${costume.name}`}
                 />
 
                 <div className="costume-info">
@@ -79,12 +102,10 @@ export default function Costumes() {
                     <p>{costume.price}€</p>
                 </div>
                 <div className="costume-selected">
-                    <i
-                        className={`costume-category ${costume.category} selected`}
-                    >
+                    <i className={`filter-button ${costume.category} selected`}>
                         {costume.category}
                     </i>
-                    <i className={`costume-gender ${costume.gender} selected`}>
+                    <i className={`filter-button ${costume.gender} selected`}>
                         {costume.gender}
                     </i>
                 </div>
@@ -103,15 +124,15 @@ export default function Costumes() {
     return (
         <div className="costume-list-container">
             <h1>Explore our costume options</h1>
-            <div className="costume-list-filter-buttons">
-                <div className="category-filter">
+            <div className="filter-buttons">
+                <div className="filter">
                     <h3>Categories:</h3>
                     <div className="buttons-container">
                         <button
                             onClick={() =>
                                 handleFilterChange("category", "superhero")
                             }
-                            className={`costume-category superhero 
+                            className={`filter-button filter-button superhero 
                     ${categoryFilter === "superhero" ? "selected" : ""}`}
                         >
                             Superheroes
@@ -120,7 +141,7 @@ export default function Costumes() {
                             onClick={() =>
                                 handleFilterChange("category", "historical")
                             }
-                            className={`costume-category historical 
+                            className={`filter-button filter-button historical 
                     ${categoryFilter === "historical" ? "selected" : ""}`}
                         >
                             Historical
@@ -129,7 +150,7 @@ export default function Costumes() {
                             onClick={() =>
                                 handleFilterChange("category", "fantasy")
                             }
-                            className={`costume-category fantasy 
+                            className={`filter-button filter-button fantasy 
                     ${categoryFilter === "fantasy" ? "selected" : ""}`}
                         >
                             Fantasy
@@ -138,7 +159,7 @@ export default function Costumes() {
                             onClick={() =>
                                 handleFilterChange("category", "creature")
                             }
-                            className={`costume-category creature 
+                            className={`filter-button filter-button creature 
                     ${categoryFilter === "creature" ? "selected" : ""}`}
                         >
                             Creatures
@@ -147,7 +168,7 @@ export default function Costumes() {
                             onClick={() =>
                                 handleFilterChange("category", "celebrity")
                             }
-                            className={`costume-category celebrity 
+                            className={`filter-button filter-button celebrity 
                     ${categoryFilter === "celebrity" ? "selected" : ""}`}
                         >
                             Celebrities
@@ -164,12 +185,12 @@ export default function Costumes() {
                         ) : null}
                     </div>
                 </div>
-                <div className="gender-filter">
+                <div className="filter">
                     <h3>Genders:</h3>
                     <div className="buttons-container">
                         <button
                             onClick={() => handleFilterChange("gender", "male")}
-                            className={`costume-gender male
+                            className={`filter-button male
                     ${genderFilter === "male" ? "selected" : ""}`}
                         >
                             Male
@@ -178,7 +199,7 @@ export default function Costumes() {
                             onClick={() =>
                                 handleFilterChange("gender", "female")
                             }
-                            className={`costume-gender female
+                            className={`filter-button female
                     ${genderFilter === "female" ? "selected" : ""}`}
                         >
                             Female
@@ -187,7 +208,7 @@ export default function Costumes() {
                             onClick={() =>
                                 handleFilterChange("gender", "unisex")
                             }
-                            className={`costume-gender unisex
+                            className={`filter-button unisex
                     ${genderFilter === "unisex" ? "selected" : ""}`}
                         >
                             Unisex
@@ -215,6 +236,25 @@ export default function Costumes() {
                         Clear filters
                     </button>
                 ) : null}
+                <div className="filter">
+                    <h3>Sort Price:</h3>
+                    <div className="buttons-container">
+                        <button
+                            className="filter-button sort"
+                            onClick={() => handleSortAsc()}
+                        >
+                            <AiOutlineArrowUp /> Ascending <AiOutlineArrowUp />
+                        </button>
+                        <button
+                            className="filter-button sort"
+                            onClick={() => handleSortDesc()}
+                        >
+                            <AiOutlineArrowDown />
+                            Descending
+                            <AiOutlineArrowDown />
+                        </button>
+                    </div>
+                </div>
             </div>
             {costumeElements.length > 0 ? (
                 <div className="costume-list">{costumeElements}</div>
