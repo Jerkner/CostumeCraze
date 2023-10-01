@@ -31,6 +31,8 @@ body {
     width: 100%;
     height: 100%;
     background-color: $first-color;
+    line-height: 1.5;
+    font-family: Inter, sans-serif;
 }
 
 a {
@@ -60,12 +62,10 @@ div#root {
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
-    font-family: Inter;
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 900;
     color: $text-color-dark;
-    line-height: 1.5;
 }
 
 .main-logo {
@@ -79,13 +79,11 @@ div#root {
 
 .nav-link {
     margin-right: 1.5rem;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
     text-align: right;
     color: $text-color-dark;
-    line-height: 1.5;
 }
 
 .nav-link:hover {
@@ -114,13 +112,11 @@ footer {
     height: 70px;
     padding: 23px 107.133px 23.081px 107px;
     background: $text-color-dark;
-    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
     text-align: center;
     color: $gray-color;
-    line-height: 1.5;
 }
 
 .home {
@@ -177,12 +173,10 @@ footer {
 .home-section h2 {
     z-index: 1;
     max-width: 480px;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
     color: $white-color;
-    line-height: 1.5;
 }
 
 .find-costumes-btn {
@@ -196,13 +190,11 @@ footer {
     height: 50px;
     border-radius: $border-radius-small;
     background: $fourth-color;
-    font-family: Inter;
     font-size: 1rem;
     font-style: normal;
     font-weight: 700;
     text-align: center;
     color: $white-color;
-    line-height: 1.5;
 }
 
 .about-main {
@@ -237,22 +229,18 @@ footer {
 
 .about-content h1 {
     text-align: center;
-    font-family: Inter;
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
     color: #161616;
-    line-height: 1.5;
     margin-bottom: 2rem;
 }
 
 .about-content h2 {
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
     color: #161616;
-    line-height: 1.5;
 }
 
 .rectangle {
@@ -271,13 +259,11 @@ footer {
 .rectangle h3 {
     width: 420px;
     margin-top: 1em;
-    font-family: Inter;
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
     text-align: center;
     color: #161616;
-    line-height: 1.5;
 }
 
 .explore-costumes-btn {
@@ -286,12 +272,10 @@ footer {
     padding: 12px 22px 13px 22px;
     border-radius: $border-radius-small;
     background: #161616;
-    font-family: Inter;
     font-size: 1em;
     font-style: normal;
     font-weight: 700;
     color: $white-color;
-    line-height: 1.5;
 }
 
 .login-container {
@@ -303,13 +287,11 @@ footer {
 .login-container h1 {
     width: 480px;
     margin: 4rem 0;
-    font-family: Inter;
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
     text-align: center;
     color: #161616;
-    line-height: 1.5;
 }
 
 .login-form input {
@@ -321,13 +303,11 @@ footer {
     border: 1px solid #d1d5db;
     border-radius: $border-radius-small;
     background: $white-color;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     color: #4d4d4d;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
-    line-height: 1.5;
 }
 
 .login-form button {
@@ -344,12 +324,10 @@ footer {
     padding: 18px 0;
     border-radius: $border-radius-small;
     background: $third-color;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
     color: #161616;
-    line-height: 1.5;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
     width: 480px;
     max-height: 55px;
@@ -357,22 +335,18 @@ footer {
 
 .login-container p {
     margin-bottom: 75px;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
     text-align: center;
     color: #161616;
-    line-height: 1.5;
 }
 
 .login-container p span {
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
     color: $fourth-color;
-    line-height: 1.5;
     cursor: pointer;
 }
 
@@ -385,12 +359,10 @@ footer {
 .not-found-container h1 {
     width: 480px;
     margin-top: 100px;
-    font-family: Inter;
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
     color: #161616;
-    line-height: 1.5;
 }
 
 .not-found-btn {
@@ -405,13 +377,11 @@ footer {
     margin-top: 2rem;
     border-radius: $border-radius-large;
     background: #161616;
-    font-family: Inter;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
     text-align: center;
     color: $white-color;
-    line-height: 1.5;
 }
 
 .costume-list-container {
@@ -424,12 +394,10 @@ footer {
 .costume-list-container h1 {
     width: 100%;
     max-width: 480px;
-    font-family: Inter;
     font-size: 2rem;
     font-style: normal;
     font-weight: 700;
     color: #161616;
-    line-height: 1.5;
     margin: 0 auto 1.5rem auto;
 }
 
@@ -453,7 +421,6 @@ footer {
     display: flex;
     align-items: baseline;
     color: #161616;
-    font-family: Inter;
     font-size: 1rem;
     font-style: normal;
     font-weight: 700;
@@ -498,25 +465,21 @@ footer {
 }
 
 .costume-info h3 {
-    font-family: Inter;
     font-size: 1rem;
     font-style: normal;
     font-weight: 600;
     color: #161616;
-    line-height: 1.5;
 }
 
 .costume-info p {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    font-family: Inter;
     font-size: 1rem;
     font-style: normal;
     font-weight: 600;
     text-align: start;
     color: #161616;
-    line-height: 1.5;
 }
 
 .costume-tile i {
@@ -541,13 +504,11 @@ footer {
     border: none;
     border-radius: $border-radius-small;
     background: $second-color;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
     text-align: center;
     color: #4d4d4d;
-    line-height: 1.5;
     cursor: pointer;
 }
 
@@ -559,14 +520,12 @@ footer {
     align-self: baseline;
     border: none;
     background-color: unset;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
     text-decoration-line: underline;
     color: #4d4d4d;
     cursor: pointer;
-    line-height: 1.5;
 }
 
 .filter-button:hover {
@@ -638,7 +597,6 @@ footer {
 
 .no-costumes {
     color: #161616;
-    font-family: Inter;
     font-size: 1rem;
     font-style: normal;
     font-weight: 700;
@@ -680,30 +638,24 @@ footer {
 
 .costume-detail-info h2 {
     color: #161616;
-    font-family: Inter;
     font-size: 2.25rem;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.5;
     margin-bottom: 0.5rem;
 }
 
 .costume-detail-info .costume-price span {
     color: #161616;
-    font-family: Inter;
     font-size: 1.75rem;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.5;
 }
 
 .costume-detail-info .costume-price {
     color: #161616;
-    font-family: Inter;
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5;
     margin-bottom: 0.5rem;
 }
 
@@ -721,22 +673,18 @@ footer {
 .costume-detail-info p {
     margin-bottom: 0.5rem;
     color: #161616;
-    font-family: Inter;
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5;
 }
 
 .link-button {
     cursor: pointer;
     color: $white-color;
     text-align: center;
-    font-family: Inter;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.5;
     border: none;
     width: min(480px, 50%);
     height: 50px;
@@ -747,11 +695,9 @@ footer {
 
 a.back-button {
     color: #161616;
-    font-family: Inter;
     font-size: 1rem;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5;
     text-decoration-line: underline;
 }
 
@@ -788,48 +734,38 @@ a.back-button {
 
 .host-dashboard-earnings .info h1 {
     color: #161616;
-    font-family: Inter;
     font-size: 36px;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.5;
 }
 
 .host-dashboard-earnings .info p {
     color: #4d4d4d;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5;
 }
 .host-dashboard-earnings .info p span {
     color: #4d4d4d;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.5;
     text-decoration-line: underline;
 }
 
 .host-dashboard-earnings .info h2 {
     color: #161616;
-    font-family: Inter;
     font-size: 48px;
     font-style: normal;
     font-weight: 800;
-    line-height: 1.5;
 }
 
 .host-dashboard-earnings a {
     margin-left: auto;
     color: #161616;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5;
     align-self: center;
 }
 
@@ -847,41 +783,33 @@ a.back-button {
 .host-dashboard-reviews h2 {
     width: 180px;
     color: #161616;
-    font-family: Inter;
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.5;
 }
 
 .host-dashboard-reviews p {
     display: flex;
     align-items: baseline;
     color: #4d4d4d;
-    font-family: Inter;
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5;
 }
 
 .host-dashboard-reviews p span {
     color: #161616;
-    font-family: Inter;
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.5;
 }
 
 .host-dashboard-reviews a {
     margin-left: auto;
     color: #161616;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5;
 }
 
 svg.star {
@@ -908,11 +836,9 @@ svg.star {
 .host-dashboard-costumes .top a {
     margin-left: auto;
     color: #161616;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5;
 }
 
 .host-costumes-section {
@@ -958,40 +884,32 @@ svg.star {
 
 .host-costume-info h3 {
     color: #161616;
-    font-family: Inter;
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
-    line-height: 1.5;
 }
 
 .host-costume-info p {
     color: #4d4d4d;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5;
 }
 
 .host-costume-single a {
     margin-left: auto;
     color: #161616;
     text-align: right;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5;
 }
 
 .host-costume-price {
     color: #4d4d4d;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5;
 }
 
 .host-income-section {
@@ -1017,41 +935,33 @@ svg.star {
     text-align: center;
     width: 100%;
     color: #161616;
-    font-family: Inter;
     font-size: 36px;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.5;
     margin-bottom: 1.5rem;
 }
 
 .host-income-section p {
     color: #4d4d4d;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5;
 }
 
 .host-income-section p span {
     color: #4d4d4d;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.5;
     text-decoration-line: underline;
 }
 
 .host-income-section h2 {
     margin-top: 2rem;
     color: #161616;
-    font-family: Inter;
     font-size: 48px;
     font-style: normal;
     font-weight: 800;
-    line-height: 1.5;
 }
 
 .graph {
@@ -1071,11 +981,9 @@ svg.star {
     align-items: baseline;
     display: flex;
     color: #4d4d4d;
-    font-family: Inter;
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5;
 }
 
 .graph-level p {
@@ -1144,11 +1052,9 @@ svg.star {
 .graph-bar p {
     color: #4d4d4d;
     text-align: center;
-    font-family: Inter;
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5;
 }
 
 .host-income-stats {
@@ -1168,21 +1074,17 @@ svg.star {
 
 .host-income-section .info-header h3 {
     color: #161616;
-    font-family: Inter;
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.5;
 }
 
 .host-income-section .info-header h3 span {
     color: #4d4d4d;
     text-align: right;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5;
 }
 
 .transactions {
@@ -1202,21 +1104,17 @@ svg.star {
 
 .transaction h3 {
     color: #161616;
-    font-family: Inter;
     font-size: 36px;
     font-style: normal;
     font-weight: 600;
-    line-height: 1.5;
 }
 
 .transaction p {
     color: #4d4d4d;
     text-align: right;
-    font-family: Inter;
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5;
 }
 
 .host-costumes {
@@ -1231,11 +1129,9 @@ svg.star {
 
 .host-costumes > h2 {
     color: #161616;
-    font-family: Inter;
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.5;
     margin-bottom: 2rem;
 }
 
@@ -1266,29 +1162,23 @@ svg.star {
 .host-costumes-details-name {
     margin-top: 1rem;
     color: #161616;
-    font-family: Inter;
     font-size: 26px;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.5;
 }
 
 .host-costumes-details-price {
     color: #161616;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5;
 }
 
 .host-costumes-details-bold {
     color: #161616;
-    font-family: Inter;
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.5;
 }
 
 .host-costumes-details-nav {
@@ -1301,20 +1191,16 @@ svg.star {
 .host-costume-details-info h1 {
     padding-top: 1rem;
     color: #161616;
-    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5;
 }
 
 .host-costume-details-info h1 span {
     color: #161616;
-    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.5;
 }
 
 .capitalized {
@@ -1327,20 +1213,16 @@ svg.star {
 
 .host-pricing h1 {
     color: #161616;
-    font-family: Inter;
     font-size: 24px;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5;
 }
 
 .host-pricing span {
     color: #4d4d4d;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5;
 }
 
 .host-costume-photos img {
@@ -1377,29 +1259,23 @@ svg.star {
 
 .top-text h2 {
     color: #161616;
-    font-family: Inter;
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.5;
 }
 
 .top-text p {
     color: #4d4d4d;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5;
 }
 
 .top-text p span {
     color: #4d4d4d;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.5;
     text-decoration-line: underline;
 }
 
@@ -1411,11 +1287,9 @@ svg.star {
 
 .ratings h3 {
     color: #161616;
-    font-family: Inter;
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.5;
 }
 
 .ratings svg,
@@ -1428,11 +1302,9 @@ svg.star {
 .ratings p {
     padding-top: 0.25rem;
     color: #161616;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5;
 }
 
 .rating-graph {
@@ -1454,11 +1326,9 @@ svg.star {
 }
 .rating-level p {
     color: #4d4d4d;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5;
     width: 4rem;
 }
 
@@ -1479,21 +1349,17 @@ svg.star {
 
 .reviews {
     color: #161616;
-    font-family: Inter;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.5;
     padding: 1.5rem 0;
 }
 
 .review .date {
     color: #8c8c8c;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
-    line-height: 1.5;
 }
 
 .review .info {
@@ -1505,20 +1371,16 @@ svg.star {
 
 .review .name {
     color: #161616;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
-    line-height: 1.5;
 }
 
 .review .text {
     color: #161616;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5;
 }
 
 .host-reviews hr {
