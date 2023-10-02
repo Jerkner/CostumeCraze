@@ -291,9 +291,14 @@ footer {
     align-items: center;
 }
 
+.login-first {
+    margin-top: 2rem;
+    color: #ff8c00;
+}
+
 .login-container h1 {
     width: 480px;
-    margin: 4rem 0;
+    margin: 2rem 0;
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
@@ -405,7 +410,7 @@ footer {
     font-style: normal;
     font-weight: 700;
     color: $text-color;
-    margin: 0 auto 1.5rem auto;
+    margin: 0 auto;
 }
 
 .filter-buttons {
