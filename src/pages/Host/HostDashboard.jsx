@@ -65,7 +65,7 @@ export default function Dashboard() {
 
                 <p>
                     <BsStarFill className="star" />
-                    <span>5.0</span>/5
+                    5.0 / 5
                 </p>
                 <Link to="reviews">Details</Link>
             </section>

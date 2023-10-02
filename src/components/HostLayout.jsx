@@ -5,8 +5,7 @@ export default function HostLayout() {
     const activeStyles = {
         fontWeight: "bold",
         textUnderlineOffset: "0.25em",
-        textDecoration: "underline 2.5px",
-        color: "#161616"
+        textDecoration: "underline 2.5px"
     }
 
     return (

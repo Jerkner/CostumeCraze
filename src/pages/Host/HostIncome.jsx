@@ -58,9 +58,6 @@ export default function HostIncome() {
                     </div>
                 </div>
                 <div className="host-income-stats">
-                    <p>
-                        Last <span>30 days</span>
-                    </p>
                     <h2>2,260€</h2>
                     <div className="info-header">
                         <h3>Your transactions (3)</h3>

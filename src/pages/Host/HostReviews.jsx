@@ -73,6 +73,7 @@ export default function Reviews() {
                                 ))}
                                 <div className="info">
                                     <p className="name">{review.name}</p>
+                                    <p className="date">|</p>
                                     <p className="date">{review.date}</p>
                                 </div>
                                 <p className="text">{review.text}</p>

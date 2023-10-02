@@ -9,8 +9,7 @@ export default function Header() {
     const activeStyles = {
         fontWeight: "bold",
         textUnderlineOffset: "0.25em",
-        textDecoration: "underline 2.5px",
-        color: "#161616"
+        textDecoration: "underline 2.5px"
     }
 
     useEffect(() => {
@@ -24,60 +23,68 @@ export default function Header() {
     }
 
     return (
-        <nav className="header">
-            <Link
-                to="/"
-                className="title-link"
-            >
-                <img
-                    className="main-logo"
-                    src="/assets/Specl145.png"
-                    alt="Logo for #CostumeCraze"
-                />
-                #CostumeCraze
-            </Link>
-            <div className="nav-links">
-                <NavLink
-                    to="/host"
-                    style={({ isActive }) => (isActive ? activeStyles : null)}
-                    className="nav-link"
+        <section className="header-container">
+            <nav className="header">
+                <Link
+                    to="/"
+                    className="title-link"
                 >
-                    User
-                </NavLink>
-                <NavLink
-                    to="about"
-                    style={({ isActive }) => (isActive ? activeStyles : null)}
-                    className="nav-link"
-                >
-                    About
-                </NavLink>
-                <NavLink
-                    to="costumes"
-                    style={({ isActive }) => (isActive ? activeStyles : null)}
-                    className="nav-link"
-                >
-                    Costumes
-                </NavLink>
-                {isLoggedIn ? (
+                    <img
+                        className="main-logo"
+                        src="/assets/Specl145.png"
+                        alt="Logo for #CostumeCraze"
+                    />
+                    #CostumeCraze
+                </Link>
+                <div className="nav-links">
                     <NavLink
-                        onClick={() => logOut()}
-                        to="/"
-                        className="nav-link log-in nowrap"
-                    >
-                        Log out
-                    </NavLink>
-                ) : (
-                    <NavLink
-                        to="login"
-                        className="nav-link log-in nowrap"
+                        to="/host"
                         style={({ isActive }) =>
                             isActive ? activeStyles : null
                         }
+                        className="nav-link"
                     >
-                        Log in
+                        User
                     </NavLink>
-                )}
-            </div>
-        </nav>
+                    <NavLink
+                        to="about"
+                        style={({ isActive }) =>
+                            isActive ? activeStyles : null
+                        }
+                        className="nav-link"
+                    >
+                        About
+                    </NavLink>
+                    <NavLink
+                        to="costumes"
+                        style={({ isActive }) =>
+                            isActive ? activeStyles : null
+                        }
+                        className="nav-link"
+                    >
+                        Costumes
+                    </NavLink>
+                    {isLoggedIn ? (
+                        <NavLink
+                            onClick={() => logOut()}
+                            to="/"
+                            className="nav-link log-in nowrap"
+                        >
+                            Log out
+                        </NavLink>
+                    ) : (
+                        <NavLink
+                            to="login"
+                            className="nav-link log-in nowrap"
+                            style={({ isActive }) =>
+                                isActive ? activeStyles : null
+                            }
+                        >
+                            Log in
+                        </NavLink>
+                    )}
+                </div>
+            </nav>
+        </section>
     )
 }
