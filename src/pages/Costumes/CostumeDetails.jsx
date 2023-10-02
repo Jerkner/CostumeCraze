@@ -60,17 +60,10 @@ export default function CostumeDetail() {
 
             {costume && (
                 <div className="costume-detail">
-                    <div
+                    <img
+                        src={costume.imageUrl}
                         className="costume-details-img"
-                        style={{
-                            backgroundImage: `url(${costume.imageUrl})`,
-                            backgroundSize: "cover",
-                            backgroundPosition: "top",
-                            width: "400px",
-                            height: "400px",
-                            borderRadius: "10px"
-                        }}
-                    ></div>
+                    ></img>
                     <div className="costume-detail-info">
                         <h2>{costume.name}</h2>
                         <p className="costume-price">

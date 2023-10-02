@@ -61,9 +61,7 @@ export default function HostIncome() {
                     <h2>2,260€</h2>
                     <div className="info-header">
                         <h3>Your transactions (3)</h3>
-                        <p>
-                            Last <span>30 days</span>
-                        </p>
+                        <p>Last 30 days</p>
                     </div>
                     <div className="transactions">
                         {transactionsData.map((item) => (

@@ -42,7 +42,7 @@ div#root {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     margin: 0 auto;
     background-color: $first-color;
@@ -59,6 +59,7 @@ div#root {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
     max-width: 480px;
     padding: 0.5rem;
 }
@@ -81,11 +82,12 @@ div#root {
 
 .nav-links {
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
 .nav-link {
-    margin-right: 1.5rem;
+    margin: 0 0.75rem;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
@@ -138,7 +140,7 @@ footer {
     position: relative;
     width: 100vw;
     height: 480px;
-    padding-top: 66px;
+    padding-top: 3em;
     background-image: url("/assets/home.jpg");
     background-size: cover;
     gap: 50px;
@@ -163,27 +165,28 @@ footer {
     gap: 2rem;
 }
 
-.first-line {
+.first-line,
+.second-line {
     font-family: "Arial", sans-serif;
-    font-size: 2rem;
+    padding: 0 0.5rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: #ff8c00;
 }
 
 .second-line {
-    font-family: "Arial", sans-serif;
-    font-size: 2rem;
-    font-weight: bold;
     color: #007bff;
 }
 
 .home-section h2 {
     z-index: 1;
-    max-width: 480px;
-    font-size: 16px;
+    max-width: 360px;
+    font-size: 0.75rem;
     font-style: normal;
     font-weight: 500;
+    margin: 0 auto;
     color: $white-color;
+    padding: 0 0.5rem;
 }
 
 .find-costumes-btn {
@@ -207,6 +210,7 @@ footer {
 .about-main {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .about-section {
@@ -227,16 +231,15 @@ footer {
 }
 
 .about-content {
-    max-width: 1024px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    margin-top: 2.5em;
     padding: 1.5rem;
 }
 
 .about-content h1 {
     text-align: center;
-    font-size: 32px;
+    font-size: 1.5rem;
     font-style: normal;
     font-weight: 700;
     color: $text-color;
@@ -244,7 +247,7 @@ footer {
 }
 
 .about-content h2 {
-    font-size: 16px;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 500;
     color: $text-color;
@@ -256,17 +259,16 @@ footer {
     flex-direction: column;
     align-items: center;
     align-self: center;
-    width: min(90%, 480px);
-    margin-bottom: 4em;
+    width: min(90%, 360px);
     margin-top: 2em;
     border-radius: $border-radius-large;
     background: $third-color;
 }
 
 .rectangle h3 {
-    width: 420px;
+    width: 320px;
     margin-top: 1em;
-    font-size: 24px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 700;
     text-align: center;
@@ -286,31 +288,40 @@ footer {
 }
 
 .login-container {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .login-first {
+    text-align: center;
     margin-top: 2rem;
     color: #ff8c00;
 }
 
 .login-container h1 {
-    width: 480px;
-    margin: 2rem 0;
-    font-size: 32px;
+    margin: 1rem 0;
+    font-size: 1.5rem;
     font-style: normal;
     font-weight: 700;
     text-align: center;
     color: $text-color;
 }
 
+.login-form {
+    width: 100%;
+    max-width: 320px;
+    padding: 1.5rem;
+}
+
 .login-form input {
     display: flex;
     align-items: center;
     align-self: stretch;
-    width: 480px;
+    width: 100%;
     padding: 9px 13px;
     border: 1px solid $border-color;
     border-radius: $border-radius-small;
@@ -341,8 +352,8 @@ footer {
     font-weight: 700;
     color: $text-color;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
-    width: 480px;
     max-height: 55px;
+    width: 100%;
 }
 
 .login-container p {
@@ -363,15 +374,16 @@ footer {
 }
 
 .not-found-container {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .not-found-container h1 {
-    width: 480px;
+    width: 320px;
     margin-top: 100px;
-    font-size: 32px;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 700;
     color: $text-color;
@@ -383,20 +395,23 @@ footer {
     flex-shrink: 0;
     flex-direction: column;
     justify-content: center;
-    width: 480px;
+    width: 320px;
     height: 55px;
-    margin-bottom: 180px;
-    margin-top: 2rem;
+    margin: 2rem auto;
     border-radius: $border-radius-large;
-    background: $text-color;
+    background: $fourth-color;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
     text-align: center;
-    color: $white-color;
+    color: $text-color-dark;
 }
 
 .costume-list-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
     max-width: 1024px;
     margin: 0 auto;
     padding: 1.5rem;
@@ -404,9 +419,9 @@ footer {
 }
 
 .costume-list-container h1 {
-    width: 100%;
-    max-width: 480px;
-    font-size: 2rem;
+    white-space: nowrap;
+    width: min-content;
+    font-size: 1.375rem;
     font-style: normal;
     font-weight: 700;
     color: $text-color;
@@ -452,12 +467,13 @@ footer {
     flex-wrap: wrap;
     margin-top: 2rem;
     padding-bottom: 4rem;
-    gap: 3rem;
+    gap: 1rem 3rem;
 }
 
 .costume-tile {
     flex: 0 0 30%;
     min-width: 250px;
+    height: 380px;
     box-sizing: border-box;
 }
 
@@ -622,6 +638,8 @@ footer {
 }
 
 .costume-detail-container {
+    margin: 0 auto;
+    max-width: 1024px;
     background-color: $first-color;
     padding: 2rem;
 }
@@ -637,13 +655,11 @@ footer {
 }
 
 .costume-details-img {
-    background-size: cover;
-    background-position: top;
-    width: 100%;
-    min-width: 150px;
-    min-height: 200px;
-    height: 25vw;
     border-radius: $border-radius-large;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: top;
 }
 
 .costume-detail-info {
@@ -711,9 +727,15 @@ footer {
 }
 
 .host-layout-nav {
+    max-width: 100%;
     display: flex;
     justify-content: center;
     padding: 1.5rem;
+}
+
+.host-layout-nav a.nav-link {
+    font-size: 0.875rem;
+    margin: 0.375rem;
 }
 
 .host-dashboard-section {
@@ -732,7 +754,7 @@ footer {
     height: 220px;
     border-radius: $border-radius-large;
     background: $third-color;
-    padding: 2.25rem;
+    padding: 1.5rem;
 }
 
 .host-dashboard-earnings .info {
@@ -783,7 +805,7 @@ footer {
     max-width: 767px;
     display: flex;
     flex-shrink: 0;
-    padding: 2.25rem;
+    padding: 1.5rem;
     border-radius: $border-radius-large;
     background: $second-color;
     align-items: baseline;
@@ -792,14 +814,14 @@ footer {
 .host-dashboard-reviews h2 {
     width: 180px;
     color: $text-color;
-    font-size: 24px;
+    font-size: 1.25rem;
     font-style: normal;
     font-weight: 700;
 }
 
 .host-dashboard-reviews p {
     color: $text-color;
-    font-size: 20px;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 700;
 }
@@ -818,15 +840,16 @@ svg.star {
 }
 
 .top {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 767px;
     display: flex;
     flex-shrink: 0;
-    padding: 2.25rem;
-    border-radius: $border-radius-large;
     align-items: center;
+    width: 100%;
+    max-width: 767px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-radius: $border-radius-large;
     background-color: $third-color;
+    font-size: 0.75rem;
 }
 
 .host-dashboard-costumes {
@@ -868,16 +891,19 @@ svg.star {
     justify-content: start;
     align-items: center;
     padding-right: 3rem;
-    width: 480px;
+    max-width: 320px;
+    width: 320px;
 }
 
 .host-costume-single img {
     border-radius: $border-radius-large;
-    width: 150px;
-    height: 150px;
+    min-width: 100px;
+    min-height: 100px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     object-position: top;
-    margin: 1.5rem;
+    margin: 0.5rem;
 }
 
 .host-costume-info {
@@ -939,7 +965,7 @@ svg.star {
     text-align: center;
     width: 100%;
     color: $text-color;
-    font-size: 36px;
+    font-size: 1.5rem;
     font-style: normal;
     font-weight: 700;
     margin-bottom: 1.5rem;
@@ -974,7 +1000,7 @@ svg.star {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    width: 480px;
+    width: 320px;
     height: 350px;
     position: relative;
 }
@@ -998,9 +1024,9 @@ svg.star {
 }
 
 .graph-bars {
-    padding-left: 3px;
     display: flex;
     width: 100%;
+    padding-left: 5%;
     justify-content: space-evenly;
     position: absolute;
     bottom: 0;
@@ -1015,7 +1041,7 @@ svg.star {
 }
 
 .graph-bar .bar {
-    width: 42px;
+    width: 32px;
     display: flex;
     flex-direction: column;
     border-radius: 5px 5px 0px 0px;
@@ -1055,7 +1081,8 @@ svg.star {
 .graph-bar p {
     color: $text-color-dark;
     text-align: center;
-    font-size: 20px;
+    font-size: 16px;
+    margin-top: 5.5px;
     font-style: normal;
     font-weight: 500;
 }
@@ -1063,27 +1090,27 @@ svg.star {
 .host-income-stats {
     border: solid 10px $second-color;
     border-radius: 10px;
-    width: 480px;
+    width: 320px;
     padding: 1.5rem;
     background-color: $first-color;
 }
 
 .host-income-section .info-header {
     width: 100%;
-    margin-top: 4rem;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .info-header p {
+    font-size: 0.75rem;
     color: $text-color;
 }
 
 .host-income-section .info-header h3 {
     color: $text-color;
-    font-size: 24px;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 700;
 }
@@ -1145,6 +1172,7 @@ svg.star {
 }
 
 .host-costumes-details-section {
+    max-width: 1024px;
     background-color: $first-color;
     padding: 1.5rem;
 }
@@ -1200,14 +1228,18 @@ svg.star {
 
 .host-costumes-details-nav a {
     color: $text-color-dark;
+    margin: 0;
+    margin-right: 0.75rem;
 }
 
 .host-costume-details-info h1 {
     padding-top: 1rem;
+    padding-right: 1.5rem;
     color: $text-color-dark;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
+    max-width: 720px;
 }
 
 .host-costume-details-info h1 span {
@@ -1246,7 +1278,7 @@ svg.star {
 
 .host-reviews {
     margin: 0 auto;
-    max-width: 100%;
+    width: 100%;
     padding: 1.5rem;
     background-color: $first-color;
 }
@@ -1273,13 +1305,13 @@ svg.star {
 
 .top-text h2 {
     color: $text-color;
-    font-size: 32px;
+    font-size: 1.5rem;
     font-style: normal;
     font-weight: 700;
 }
 
 .top-text p {
-    color: $text-color-dark;
+    color: $text-color;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -1327,6 +1359,8 @@ svg.star {
     flex-direction: column;
     gap: 1rem;
     height: 100%;
+    width: 100%;
+    max-width: 480px;
     border: solid 1.5rem $second-color;
     background-color: $second-color;
     border-radius: 10px;
@@ -1336,11 +1370,11 @@ svg.star {
     align-items: center;
     justify-content: space-between;
     display: flex;
-    width: 480px;
+    width: 100%;
 }
 .rating-level p {
     color: $text-color-dark;
-    font-size: 16px;
+    font-size: 0.75rem;
     font-style: normal;
     font-weight: 500;
     width: 4rem;
@@ -1352,7 +1386,7 @@ svg.star {
 
 .empty-bar {
     border-radius: 6px;
-    width: 335px;
+    width: 80%;
     height: 0.75rem;
     background: $fifth-color;
 }
@@ -1423,10 +1457,137 @@ svg.star {
         margin-bottom: 0;
     }
 
+    .first-line,
+    .second-line {
+        font-size: 2rem;
+    }
+
+    .home-section h2 {
+        font-size: 1rem;
+        max-width: 480px;
+    }
+
+    .about-content {
+        max-width: 1024px;
+        margin-top: 1em;
+    }
+
+    .about-content h1 {
+        font-size: 2rem;
+    }
+
+    .rectangle {
+        width: 480px;
+    }
+
+    .host-layout-nav a.nav-link {
+        font-size: 1rem;
+        margin: 0 0.75rem;
+    }
+
+    .host-dashboard-earnings,
+    .host-dashboard-reviews,
+    .top {
+        padding: 2.25rem;
+    }
+
+    .host-dashboard-reviews h2 {
+        font-size: 24px;
+    }
+
+    .host-dashboard-reviews p {
+        font-size: 20px;
+    }
+
+    .top {
+        font-size: 1rem;
+    }
+
     .costume-detail-info {
         align-items: end;
         padding-right: 1.5rem;
         width: 50%;
+    }
+
+    .host-costume-single {
+        width: 480px;
+        max-width: unset;
+    }
+
+    .host-costume-single img {
+        min-width: 150px;
+        min-height: 150px;
+        width: 150px;
+        height: 150px;
+        margin: 1.5rem;
+    }
+
+    .host-income-section h1 {
+        font-size: 2rem;
+    }
+
+    .graph {
+        width: 480px;
+    }
+
+    .graph-bars {
+        padding-left: 20px;
+    }
+
+    .graph-bar .bar {
+        width: 42px;
+    }
+
+    .host-income-stats {
+        width: 480px;
+    }
+
+    .info-header p {
+        font-size: 1rem;
+    }
+
+    .host-income-section .info header h3 {
+        font-size: 1.25rem;
+    }
+
+    .host-reviews {
+        width: 100%;
+        max-width: 1024px;
+    }
+
+    .top-text h2 {
+        font-size: 2rem;
+    }
+
+    .rating-graph {
+        width: 480px;
+    }
+
+    .rating-level p {
+        font-size: 1rem;
+    }
+
+    .costume-list-container h1 {
+        font-size: 2rem;
+    }
+
+    .costume-details-img {
+        width: 400px;
+        height: 400px;
+    }
+
+    .login-container h1 {
+        font-size: 2rem;
+    }
+
+    .login-form {
+        max-width: 480px;
+    }
+
+    .not-found-container h1 {
+        font-size: 2rem;
+        width: 100%;
+        max-width: 1024px;
     }
 
     .link-button {
