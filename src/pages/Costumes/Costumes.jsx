@@ -240,6 +240,7 @@ export default function Costumes() {
                         <Select
                             placeholder="All genders"
                             options={genderOptions}
+                            isSearchable={false}
                             value={genderOptions.find(
                                 (option) => option.value === genderFilter
                             )}
@@ -337,6 +338,7 @@ export default function Costumes() {
                         <Select
                             placeholder="Sort price:"
                             options={sortOptions}
+                            isSearchable={false}
                             value={sortOptions.find(
                                 (option) => option.value === genderFilter
                             )}
