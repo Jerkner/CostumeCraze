@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react"
 import { Link, useSearchParams } from "react-router-dom"
+import Select from "react-select"
 import { getCostumes } from "../../api"
-import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai"
-import { BsGenderMale, BsGenderFemale } from "react-icons/bs"
-import { IoMaleFemaleOutline } from "react-icons/io5"
+import {
+    categoryOptions,
+    genderOptions,
+    sortOptions,
+} from "../../components/options"
 
 export default function Costumes() {
     const [searchParams, setSearchParams] = useSearchParams()
@@ -15,6 +18,11 @@ export default function Costumes() {
     const categoryFilter = searchParams.get("category")
     const genderFilter = searchParams.get("gender")
     const sortDirection = searchParams.get("sortOrder")
+
+    const [selectedSortOption, setSelectedSortOption] = useState(
+        sortOptions.find((option) => option.value === sortDirection) ||
+            sortOptions[0]
+    )
 
     useEffect(() => {
         async function loadCostumes() {
@@ -50,20 +58,13 @@ export default function Costumes() {
         })
     }
 
-    function handleSortAsc() {
+    function handleSort(option) {
         setSearchParams((prevParams) => {
-            prevParams.set("sortOrder", "asc")
+            prevParams.set("sortOrder", option.value)
             return prevParams
         })
-        setSortOrder("asc")
-    }
-
-    function handleSortDesc() {
-        setSearchParams((prevParams) => {
-            prevParams.set("sortOrder", "desc")
-            return prevParams
-        })
-        setSortOrder("desc")
+        setSelectedSortOption(option)
+        setSortOrder(option.value)
     }
 
     const displayedCostumes = [...costumes]
@@ -105,7 +106,7 @@ export default function Costumes() {
                 state={{
                     search: `?${searchParams.toString()}`,
                     category: categoryFilter,
-                    gender: genderFilter
+                    gender: genderFilter,
                 }}
             >
                 <img
@@ -144,139 +145,272 @@ export default function Costumes() {
                 <div className="filter">
                     <h3>Categories:</h3>
                     <div className="buttons-container">
-                        <button
-                            onClick={() =>
-                                handleFilterChange("category", "superhero")
-                            }
-                            className={`filter-button superhero 
-                    ${categoryFilter === "superhero" ? "selected" : ""}`}
-                        >
-                            Superheroes
-                        </button>
-                        <button
-                            onClick={() =>
-                                handleFilterChange("category", "historical")
-                            }
-                            className={`filter-button historical 
-                    ${categoryFilter === "historical" ? "selected" : ""}`}
-                        >
-                            Historical
-                        </button>
-                        <button
-                            onClick={() =>
-                                handleFilterChange("category", "fantasy")
-                            }
-                            className={`filter-button fantasy 
-                    ${categoryFilter === "fantasy" ? "selected" : ""}`}
-                        >
-                            Fantasy
-                        </button>
-                        <button
-                            onClick={() =>
-                                handleFilterChange("category", "creature")
-                            }
-                            className={`filter-button creature 
-                    ${categoryFilter === "creature" ? "selected" : ""}`}
-                        >
-                            Creatures
-                        </button>
-                        <button
-                            onClick={() =>
-                                handleFilterChange("category", "celebrity")
-                            }
-                            className={`filter-button celebrity 
-                    ${categoryFilter === "celebrity" ? "selected" : ""}`}
-                        >
-                            Celebrities
-                        </button>
-                        {categoryFilter ? (
-                            <button
-                                onClick={() => {
+                        <Select
+                            placeholder="All categories"
+                            options={categoryOptions}
+                            value={categoryOptions.find(
+                                (option) => option.value === categoryFilter
+                            )}
+                            styles={{
+                                menu: (provided) => ({
+                                    ...provided,
+                                    backgroundColor: "#4e6b8f",
+                                }),
+                                placeholder: (provided) => ({
+                                    ...provided,
+                                    color: "#fff",
+                                    whiteSpace: "nowrap",
+                                    width: "180px",
+                                }),
+                                control: (baseStyles, { selectProps }) => {
+                                    const selectedOption = categoryOptions.find(
+                                        (option) =>
+                                            option.value ===
+                                            (selectProps.value
+                                                ? selectProps.value.value
+                                                : null)
+                                    )
+
+                                    return {
+                                        ...baseStyles,
+                                        backgroundColor: selectedOption
+                                            ? selectedOption.hoverStyle
+                                                  .backgroundColor
+                                            : "#4e6b8f",
+                                        border: "none",
+                                        width: "180px",
+                                        whiteSpace: "nowrap",
+                                        cursor: "pointer",
+                                    }
+                                },
+                                option: (provided) => ({
+                                    ...provided,
+                                    borderTop: "1px solid #34495e",
+                                }),
+                                singleValue: (provided) => ({
+                                    ...provided,
+                                    color: "#fff",
+                                    border: "none",
+                                }),
+                            }}
+                            components={{
+                                Option: (props) => {
+                                    const { label, value, innerProps } = props
+                                    const option = categoryOptions.find(
+                                        (option) => option.value === value
+                                    )
+
+                                    return (
+                                        <div
+                                            {...innerProps}
+                                            style={
+                                                props.isFocused
+                                                    ? option.hoverStyle
+                                                    : option.style
+                                            }
+                                        >
+                                            {label}
+                                        </div>
+                                    )
+                                },
+                            }}
+                            onChange={(selectedOption) => {
+                                if (
+                                    selectedOption &&
+                                    selectedOption.value === "all"
+                                ) {
                                     handleFilterChange("category", null)
-                                }}
-                                className="clear-filters"
-                            >
-                                All categories
-                            </button>
-                        ) : null}
+                                } else {
+                                    handleFilterChange(
+                                        "category",
+                                        selectedOption
+                                            ? selectedOption.value
+                                            : null
+                                    )
+                                }
+                            }}
+                        />
                     </div>
                 </div>
                 <div className="filter">
                     <h3>Genders:</h3>
                     <div className="buttons-container">
-                        <button
-                            onClick={() => handleFilterChange("gender", "male")}
-                            className={`filter-button male
-                    ${genderFilter === "male" ? "selected" : ""}`}
-                        >
-                            Male
-                            <BsGenderMale />
-                        </button>
-                        <button
-                            onClick={() =>
-                                handleFilterChange("gender", "female")
-                            }
-                            className={`filter-button female
-                    ${genderFilter === "female" ? "selected" : ""}`}
-                        >
-                            Female
-                            <BsGenderFemale />
-                        </button>
-                        <button
-                            onClick={() =>
-                                handleFilterChange("gender", "unisex")
-                            }
-                            className={`filter-button unisex
-                    ${genderFilter === "unisex" ? "selected" : ""}`}
-                        >
-                            Unisex
-                            <IoMaleFemaleOutline />
-                        </button>
-                        {genderFilter ? (
-                            <button
-                                onClick={() => {
+                        <Select
+                            placeholder="All genders"
+                            options={genderOptions}
+                            value={genderOptions.find(
+                                (option) => option.value === genderFilter
+                            )}
+                            styles={{
+                                menu: (provided) => ({
+                                    ...provided,
+                                    backgroundColor: "#4e6b8f",
+                                }),
+                                placeholder: (provided) => ({
+                                    ...provided,
+                                    color: "#fff",
+                                    whiteSpace: "nowrap",
+                                }),
+                                control: (baseStyles, { selectProps }) => {
+                                    const selectedOption = genderOptions.find(
+                                        (option) =>
+                                            option.value ===
+                                            (selectProps.value
+                                                ? selectProps.value.value
+                                                : null)
+                                    )
+
+                                    const hoverStyle =
+                                        selectedOption &&
+                                        selectedOption.hoverStyle
+
+                                    return {
+                                        ...baseStyles,
+                                        ...hoverStyle,
+                                        backgroundColor: hoverStyle
+                                            ? hoverStyle.backgroundColor
+                                            : selectedOption
+                                            ? selectedOption.style
+                                                  .backgroundColor
+                                            : "#4e6b8f",
+                                        border: "none",
+                                        width: "180px",
+                                        whiteSpace: "nowrap",
+                                        cursor: "pointer",
+                                        padding: "0",
+                                    }
+                                },
+
+                                option: (provided) => ({
+                                    ...provided,
+                                }),
+                                singleValue: (provided) => ({
+                                    ...provided,
+                                    color: "#fff",
+                                    border: "none",
+                                }),
+                            }}
+                            components={{
+                                Option: (props) => {
+                                    const { label, value, innerProps } = props
+                                    const option = genderOptions.find(
+                                        (option) => option.value === value
+                                    )
+
+                                    return (
+                                        <div
+                                            {...innerProps}
+                                            style={
+                                                props.isFocused
+                                                    ? option.hoverStyle
+                                                    : option.style
+                                            }
+                                        >
+                                            {label}
+                                        </div>
+                                    )
+                                },
+                            }}
+                            onChange={(selectedOption) => {
+                                if (
+                                    selectedOption &&
+                                    selectedOption.value === "all"
+                                ) {
                                     handleFilterChange("gender", null)
-                                }}
-                                className="clear-filters"
-                            >
-                                All genders
-                            </button>
-                        ) : null}
+                                } else {
+                                    handleFilterChange(
+                                        "gender",
+                                        selectedOption
+                                            ? selectedOption.value
+                                            : null
+                                    )
+                                }
+                            }}
+                        />
                     </div>
                 </div>
-
                 <div className="filter">
-                    <h3>Sort Price:</h3>
+                    <h3>Sort by:</h3>
                     <div className="buttons-container">
-                        <button
-                            className={`filter-button sort ${
-                                sortDirection === "asc" ? "selected" : ""
-                            }`}
-                            onClick={() => handleSortAsc()}
-                        >
-                            <AiOutlineArrowUp /> Ascending <AiOutlineArrowUp />
-                        </button>
-                        <button
-                            className={`filter-button sort ${
-                                sortDirection === "desc" ? "selected" : ""
-                            }`}
-                            onClick={() => handleSortDesc()}
-                        >
-                            <AiOutlineArrowDown />
-                            Descending
-                            <AiOutlineArrowDown />
-                        </button>
-                        {categoryFilter || genderFilter ? (
-                            <button
-                                onClick={() => {
-                                    handleFilterChange("category", null)
-                                    handleFilterChange("gender", null)
-                                }}
-                                className="clear-filters"
-                            >
-                                Clear all filters
-                            </button>
-                        ) : null}
+                        <Select
+                            placeholder="Sort price:"
+                            options={sortOptions}
+                            value={sortOptions.find(
+                                (option) => option.value === genderFilter
+                            )}
+                            styles={{
+                                menu: (provided) => ({
+                                    ...provided,
+                                    backgroundColor: "#4e6b8f",
+                                }),
+                                placeholder: (provided) => ({
+                                    ...provided,
+                                    color: "#fff",
+                                    whiteSpace: "nowrap",
+                                }),
+                                control: (baseStyles, { selectProps }) => {
+                                    const selectedOption = sortOptions.find(
+                                        (option) =>
+                                            option.value ===
+                                            (selectProps.value
+                                                ? selectProps.value.value
+                                                : null)
+                                    )
+
+                                    const hoverStyle =
+                                        selectedOption &&
+                                        selectedOption.hoverStyle
+
+                                    return {
+                                        ...baseStyles,
+                                        ...hoverStyle,
+                                        backgroundColor: hoverStyle
+                                            ? hoverStyle.backgroundColor
+                                            : selectedOption
+                                            ? selectedOption.style
+                                                  .backgroundColor
+                                            : "#4e6b8f",
+                                        border: "none",
+                                        width: "180px",
+                                        whiteSpace: "nowrap",
+                                        cursor: "pointer",
+                                        padding: "0",
+                                    }
+                                },
+
+                                option: (provided) => ({
+                                    ...provided,
+                                    borderTop: "1px solid #34495e",
+                                }),
+                                singleValue: (provided) => ({
+                                    ...provided,
+                                    color: "#fff",
+                                    border: "none",
+                                }),
+                            }}
+                            components={{
+                                Option: (props) => {
+                                    const { label, value, innerProps } = props
+                                    const option = sortOptions.find(
+                                        (option) => option.value === value
+                                    )
+
+                                    return (
+                                        <div
+                                            {...innerProps}
+                                            style={
+                                                props.isFocused
+                                                    ? option.hoverStyle
+                                                    : option.style
+                                            }
+                                        >
+                                            {label}
+                                        </div>
+                                    )
+                                },
+                            }}
+                            onChange={handleSort}
+                        />
                     </div>
                 </div>
             </div>
