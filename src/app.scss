@@ -873,17 +873,13 @@ svg.star {
     font-weight: 500;
 }
 
-.host-costumes-tab {
-    width: 100%;
-}
-
 .host-costumes-section {
-    justify-content: center;
-    width: 100%;
-    max-width: 1024px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1024px;
     margin: 0 auto;
 }
 
