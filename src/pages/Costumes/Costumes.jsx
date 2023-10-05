@@ -149,6 +149,7 @@ export default function Costumes() {
                             inputMode="none"
                             placeholder="All categories"
                             options={categoryOptions}
+                            isSearchable={false}
                             value={categoryOptions.find(
                                 (option) => option.value === categoryFilter
                             )}
