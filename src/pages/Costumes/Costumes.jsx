@@ -17,12 +17,6 @@ export default function Costumes() {
 
     const categoryFilter = searchParams.get("category")
     const genderFilter = searchParams.get("gender")
-    const sortDirection = searchParams.get("sortOrder")
-
-    const [selectedSortOption, setSelectedSortOption] = useState(
-        sortOptions.find((option) => option.value === sortDirection) ||
-            sortOptions[0]
-    )
 
     useEffect(() => {
         async function loadCostumes() {
@@ -146,6 +140,7 @@ export default function Costumes() {
                     <h3>Categories:</h3>
                     <div className="buttons-container">
                         <Select
+                            className="select-element"
                             inputMode="none"
                             placeholder="All categories"
                             options={categoryOptions}
@@ -162,7 +157,6 @@ export default function Costumes() {
                                     ...provided,
                                     color: "#fff",
                                     whiteSpace: "nowrap",
-                                    width: "180px",
                                 }),
                                 control: (baseStyles, { selectProps }) => {
                                     const selectedOption = categoryOptions.find(
@@ -180,7 +174,6 @@ export default function Costumes() {
                                                   .backgroundColor
                                             : "#4e6b8f",
                                         border: "none",
-                                        width: "180px",
                                         whiteSpace: "nowrap",
                                         cursor: "pointer",
                                     }
@@ -238,6 +231,7 @@ export default function Costumes() {
                     <h3>Genders:</h3>
                     <div className="buttons-container">
                         <Select
+                            className="select-element"
                             placeholder="All genders"
                             options={genderOptions}
                             isSearchable={false}
@@ -277,7 +271,6 @@ export default function Costumes() {
                                                   .backgroundColor
                                             : "#4e6b8f",
                                         border: "none",
-                                        width: "180px",
                                         whiteSpace: "nowrap",
                                         cursor: "pointer",
                                         padding: "0",
@@ -336,6 +329,7 @@ export default function Costumes() {
                     <h3>Sort by:</h3>
                     <div className="buttons-container">
                         <Select
+                            className="select-element"
                             placeholder="Sort price:"
                             options={sortOptions}
                             isSearchable={false}
@@ -375,7 +369,6 @@ export default function Costumes() {
                                                   .backgroundColor
                                             : "#4e6b8f",
                                         border: "none",
-                                        width: "180px",
                                         whiteSpace: "nowrap",
                                         cursor: "pointer",
                                         padding: "0",
