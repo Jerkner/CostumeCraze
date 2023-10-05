@@ -146,6 +146,7 @@ export default function Costumes() {
                     <h3>Categories:</h3>
                     <div className="buttons-container">
                         <Select
+                            isSearchable="false"
                             placeholder="All categories"
                             options={categoryOptions}
                             value={categoryOptions.find(
