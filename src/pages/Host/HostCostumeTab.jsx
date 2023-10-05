@@ -22,7 +22,10 @@ export default function HostCostumeTab() {
         loadCostumes()
     }, [])
     const hostCostumes = costumes.map((costume) => (
-        <section key={costume.id}>
+        <section
+            className="host-costume-tab"
+            key={costume.id}
+        >
             <div className="host-costume-single">
                 <img
                     src={costume.imageUrl}
