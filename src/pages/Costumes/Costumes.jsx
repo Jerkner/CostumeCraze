@@ -17,6 +17,12 @@ export default function Costumes() {
 
     const categoryFilter = searchParams.get("category")
     const genderFilter = searchParams.get("gender")
+    const sortDirection = searchParams.get("sortOrder")
+
+    const [selectedSortOption, setSelectedSortOption] = useState(
+        sortOptions.find((option) => option.value === sortDirection) ||
+            sortOptions[0]
+    )
 
     useEffect(() => {
         async function loadCostumes() {
