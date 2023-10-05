@@ -739,7 +739,7 @@ footer {
     max-width: 100%;
     display: flex;
     justify-content: center;
-    padding: 1.5rem;
+    padding: 1.5rem 0;
 }
 
 .host-layout-nav a.nav-link {
@@ -877,10 +877,10 @@ svg.star {
     display: flex;
     flex-direction: column;
     align-items: center;
+    align-self: center;
     justify-content: center;
     width: 100%;
     max-width: 1024px;
-    margin: 0 auto;
 }
 
 .host-costumes-section h2 {
@@ -899,8 +899,6 @@ svg.star {
     display: flex;
     justify-content: start;
     align-items: center;
-    padding-right: 3rem;
-    max-width: 320px;
     width: 320px;
 }
 
@@ -942,6 +940,7 @@ svg.star {
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
+    margin-right: 3rem;
 }
 
 .host-costume-price {
@@ -1163,6 +1162,7 @@ svg.star {
 }
 
 .host-costumes {
+    width: 100%;
     max-width: 1024px;
     margin: 0 auto;
     flex-wrap: wrap;
