@@ -1,8 +1,42 @@
-# React + Vite
+# CostumeCraze
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CostumeCraze is a web application built using React that allows users to explore, browse, and manage costumes. The platform offers a wide range of features including user authentication, a diverse costume catalog, host management dashboard, and detailed costume views.
 
-Currently, two official plugins are available:
+## Table of Contents
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [File Structure](#file-structure)
+- [Contact](#contact)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- **User Authentication**: Provides secure login functionality allowing users to access personalized features.
+- **Costume Catalog**: Explore a vast collection of costumes categorized by genre, gender, and price.
+- **Host Dashboard**: Hosts have access to a dashboard to manage listed costumes, track income, and review feedback.
+- **Detailed Costume Views**: Each costume has detailed views showcasing images, descriptions, and rental options.
+
+## Technologies Used
+
+- React
+- React Router
+- SASS
+- Firebase
+- MirageJS
+
+## File Structure
+
+The project's file structure is organized as follows:
+
+- `src/`: Contains the source code.
+- `components/`: Reusable components used throughout the application.
+- `pages/`: Different pages of the application.
+- `api.js`: Manages communication with the backend (Firebase).
+- `App.jsx`: Main component handling routes.
+- `app.scss`: Styling for the application.
+- `index.jsx`: Entry point of the application.
+- `server.js`: MirageJS server setup for mocking API endpoints.
+
+
+## Contact
+
+For any questions or suggestions regarding this project, feel free to reach out to me [here](mailto:philip@jerkner.se).
